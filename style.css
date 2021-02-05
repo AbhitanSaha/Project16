@@ -1,6 +1,6 @@
 body
 {
-  color: rgb(179, 38, 171);
+  color: rgb(243, 0, 0);
   background: #004cff;
 }
 span
@@ -15,7 +15,7 @@ span
 }
 #result_emotion_name ,#result_emotion_name2  
 {
-  color: rgb(61, 109, 109);
+  color: rgb(0, 255, 255);
 }
 .emotion_name
 {
@@ -26,8 +26,8 @@ span
   font-size:48px;
 }
 label{
-  color:rgb(37, 83, 56);
-  background-color:rgb(255, 238, 0);
+  color:rgb(0, 195, 255);
+  background-color:rgb(195, 0, 255);
   padding:20px;
   border-radius: 20px;
   font-size:large;
