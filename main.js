@@ -1,16 +1,16 @@
 
 Webcam.set({ width:350, height:300, image_format : 'png', png_quality:90 });
- camera = document.getElementById("camera");
-  Webcam.attach('#camera');
+camera = document.getElementById("camera");
+ Webcam.attach('#camera');
 function take_snapshot(){
 Webcam.snap(function(data_uri){
 document.getElementById("result").innerHTML='<img id="captured_img" src="'+data_uri+'"/>';
 })
 }
 console.log('ml5.version;', ml5.version);
-classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/fnvTX8wz5/model.json',modelLoaded);
+classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/C7o9B91Eq/model.json',modelLoaded);
 function modelLoaded(){
-console.log("Model");
+console.log("Model")
 }
 function speak(){
     var synth=window.speechSynthesis;
@@ -35,22 +35,28 @@ function gotResult(error,results){
         prediction_2=results[1].label;
         speak();
     }
-    if(results[0].label=="happy"){
-        document.getElementById("update_emoji_1").innerHTML="&#128522;";
+    if(results[0].label=="up"){
+        document.getElementById("update_emoji_1").innerHTML="&#9758;";
     }
-    if(results[0].label=="sad"){
-        document.getElementById("update_emoji_1").innerHTML="&#128532;";
+    if(results[0].label=="left"){
+        document.getElementById("update_emoji_1").innerHTML="&#9756;";
     }
-    if(results[0].label=="angry"){
-        document.getElementById("update_emoji_1").innerHTML="&#128545;";
+    if(results[0].label=="down"){
+        document.getElementById("update_emoji_1").innerHTML="&#9759;";
     }
-    if(results[1].label=="happy"){
-        document.getElementById("update_emoji_2").innerHTML="&#128522;";
+    if(results[0].label=="right"){
+        document.getElementById("update_emoji_1").innerHTML="&#9757;";
     }
-    if(results[1].label=="sad"){
-        document.getElementById("update_emoji_2").innerHTML="&#128532;";
+    if(results[1].label=="up"){
+        document.getElementById("update_emoji_2").innerHTML="&#9758;";
     }
-    if(results[1].label=="angry"){
-        document.getElementById("update_emoji_2").innerHTML="&#128545;";
+    if(results[1].label=="left"){
+        document.getElementById("update_emoji_2").innerHTML="&#9756;";
+    }
+    if(results[1].label=="right"){
+        document.getElementById("update_emoji_2").innerHTML="&#9757;";
+    }
+    if(results[0].label=="down"){
+        document.getElementById("update_emoji_1").innerHTML="&#9759;";
     }
 }
